@@ -1,0 +1,5 @@
+selenium
+httpx
+pandas
+dotenv
+loguru

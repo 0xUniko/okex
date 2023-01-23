@@ -1,0 +1,78 @@
+2022-06-20 12:23:00.236 | SUCCESS  | __main__:<module>:29 - Ads server is ready
+2022-06-20 12:23:00.249 | INFO     | __main__:<module>:34 - account begin catiriasaman1356@gmail.com
+2022-06-20 12:23:03.242 | INFO     | utils.google.login_google:login_gmail:100 - login gmail
+2022-06-20 12:23:03.244 | INFO     | utils.google.login_google:login_gmail:102 - login gmail, go to https://gmail.google.com
+2022-06-20 12:23:07.372 | INFO     | utils.google.login_google:login_gmail:107 - cached login in status fail, current url is: https://www.google.com/intl/zh-CN/gmail/about/
+2022-06-20 12:23:10.124 | INFO     | utils.google.login_google:login_with_username_psw:44 - login in with username and password
+2022-06-20 12:23:12.191 | INFO     | utils.google.login_google:login_with_username_psw:59 - enter the account
+2022-06-20 12:23:13.583 | INFO     | utils.google.login_google:login_with_username_psw:75 - enter the password
+2022-06-20 12:23:32.308 | INFO     | utils.google.login_google:login_gmail:138 - verify the preregistered email address, current url is: https://accounts.google.com/signin/v2/challenge/selection?flowName=GlifWebSignIn&flowEntry=ServiceLogin&cid=1&navigationDirection=forward&TL=AM3QAYZquhLMw_BZrnrbjrX-fCjhHbfjShRXcYoucAJTvZ7L9MtjPeY1XbKA8Qnl&lid=2
+2022-06-20 12:23:32.310 | INFO     | utils.google.login_google:login_gmail:141 - select preregistered email
+2022-06-20 12:23:33.386 | INFO     | utils.google.login_google:login_gmail:150 - enter preregistered email
+2022-06-20 12:23:37.176 | INFO     | utils.google.change_recovery_email:change_recovery_email:15 - change recovery email
+2022-06-20 12:23:37.188 | INFO     | utils.google.change_recovery_email:change_recovery_email:18 - go to recovery email
+2022-06-20 12:23:45.632 | ERROR    | __main__:<module>:178 - error occurs
+Traceback (most recent call last):
+
+> File "e:\crypto\okex\main.py", line 88, in <module>
+    driver, logger = change_recovery_email(driver, logger, account,
+    │                │                     │       │       └ 'catiriasaman1356@gmail.com'
+    │                │                     │       └ <loguru.logger handlers=[(id=0, level=10, sink=<stderr>), (id=1, level=10, sink='.log')]>
+    │                │                     └ <selenium.webdriver.chrome.webdriver.WebDriver (session="840d95d7ea55209af38ad2c2f8f67e22")>
+    │                └ <function change_recovery_email at 0x000001B0A564FD00>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="840d95d7ea55209af38ad2c2f8f67e22")>
+
+  File "e:\crypto\okex\utils\google\change_recovery_email.py", line 22, in change_recovery_email
+    if driver.current_url[:34] == 'https://accounts.google.com/signin':
+       │      └ <property object at 0x000001B0959917B0>
+       └ <selenium.webdriver.chrome.webdriver.WebDriver (session="840d95d7ea55209af38ad2c2f8f67e22")>
+
+  File "C:\Users\uniko\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 920, in current_url
+    return self.execute(Command.GET_CURRENT_URL)['value']
+           │    │       │       └ 'getCurrentUrl'
+           │    │       └ <class 'selenium.webdriver.remote.command.Command'>
+           │    └ <function WebDriver.execute at 0x000001B095998DC0>
+           └ <selenium.webdriver.chrome.webdriver.WebDriver (session="840d95d7ea55209af38ad2c2f8f67e22")>
+
+  File "C:\Users\uniko\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 430, in execute
+    self.error_handler.check_response(response)
+    │    │             │              └ {'status': 500, 'value': '{"value":{"error":"chrome not reachable","message":"chrome not reachable\\n  (Session info: chrome=...
+    │    │             └ <function ErrorHandler.check_response at 0x000001B09584E830>
+    │    └ <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x000001B0A56A4FD0>
+    └ <selenium.webdriver.chrome.webdriver.WebDriver (session="840d95d7ea55209af38ad2c2f8f67e22")>
+
+  File "C:\Users\uniko\AppData\Local\Programs\Python\Python310\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 247, in check_response
+    raise exception_class(message, screen, stacktrace)
+          │               │        │       └ ['Backtrace:', '\tOrdinal0 [0x00729943+2595139]', '\tOrdinal0 [0x006BC9F1+2148849]', '\tOrdinal0 [0x005B43F0+1065968]', '\tOr...
+          │               │        └ None
+          │               └ 'chrome not reachable\n  (Session info: chrome=99.0.4844.84)'
+          └ <class 'selenium.common.exceptions.WebDriverException'>
+
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=99.0.4844.84)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00729943+2595139]
+	Ordinal0 [0x006BC9F1+2148849]
+	Ordinal0 [0x005B43F0+1065968]
+	Ordinal0 [0x005A87C2+1017794]
+	Ordinal0 [0x005A8FF8+1019896]
+	Ordinal0 [0x005AA892+1026194]
+	Ordinal0 [0x005A4219+999961]
+	Ordinal0 [0x005B5860+1071200]
+	Ordinal0 [0x0060B2D2+1422034]
+	Ordinal0 [0x005FB806+1357830]
+	Ordinal0 [0x005D6086+1204358]
+	Ordinal0 [0x005D6F96+1208214]
+	GetHandleVerifier [0x008CB232+1658114]
+	GetHandleVerifier [0x0098312C+2411516]
+	GetHandleVerifier [0x007BF261+560433]
+	GetHandleVerifier [0x007BE366+556598]
+	Ordinal0 [0x006C286B+2173035]
+	Ordinal0 [0x006C75F8+2192888]
+	Ordinal0 [0x006C76E5+2193125]
+	Ordinal0 [0x006D11FC+2232828]
+	BaseThreadInitThunk [0x765F6739+25]
+	RtlGetFullPathName_UEx [0x77B88FEF+1215]
+	RtlGetFullPathName_UEx [0x77B88FBD+1165]
+
